@@ -13,5 +13,7 @@ fun main() {
     println()
     println(numbers.takeWhile { !it.startsWith("F") })
     println(numbers.takeLastWhile { it != "Three" })
-
+    println()
+    println(numbers.dropWhile { it.length == 3 })
+    println(numbers.dropLastWhile { it.contains("i") })
 }
