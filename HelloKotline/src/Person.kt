@@ -34,8 +34,8 @@ class Person (val firstName: String, val lastName: String){
  */
 
 
-class Person (var firstName: String = "Peter", var lastName: String = "Parker") {
-    var nickName: String? = null
+ class Person (var firstName: String = "Peter", var lastName: String = "Parker") {
+    protected var nickName: String? = null
         set(value) {
             field = value
             println("the new nickname is $value")
@@ -44,4 +44,9 @@ class Person (var firstName: String = "Peter", var lastName: String = "Parker") 
             println("The Returned Value is $field")
             return field
         }
+    fun printInto() {
+//        val nicknameToPrint = if(nickName != null) nickName else "no nick name"
+        val nicknameToPrint = nickName ?: "no nickname"
+        println("$firstName ($nicknameToPrint) $lastName")
+    }
 }
